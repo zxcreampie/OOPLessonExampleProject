@@ -11,7 +11,36 @@ public:
 	float avg_mark;	
 
 	Student() {
+		cout << "default-constructor" << endl;
+		name = "no name";
+		surname = "no surname";
+		age = 16;
+		avg_mark = 4;
+	}
 
+	Student(string n, string sname) {
+		cout << "constructor with params" << endl;
+		name = n;
+		surname = sname;
+	}
+
+
+
+
+	Student(int a) {
+		cout << "constructor with params" << endl;
+		age = a;
+	}
+
+
+	Student(float mark) {
+		cout << "constructor with params" << endl;
+		avg_mark = mark;
+	}
+
+	Student(float mark) {
+		cout << "constructor with params" << endl;
+		avg_mark = mark;
 	}
 
 	void init(string n, string sname, int a, float mark) {
@@ -21,18 +50,21 @@ public:
 		avg_mark = mark;
 	}
 
+	void clean_student(Student st) {
+		name = "no name";
+		surname = "no surname";
+		age = 0;
+		avg_mark = 0;
+	}
+
+
 	string convert_to_string() {
 		return name + " " + surname + " (age = " + to_string(age)
 			+ ", average mark = " + to_string(avg_mark) +")";
 	}
 };
 
-void clean_student(Student st) {
-	st.name = "no name";
-	st.surname = "no surname";
-	st.age = 0;
-	st.avg_mark = 0;
-}
+
 
 Student get_best_student(Student st1, Student st2, Student st3) {
 	return st1.avg_mark > st2.avg_mark && st1.avg_mark > st3.avg_mark ? st1 
