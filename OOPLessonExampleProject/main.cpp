@@ -18,26 +18,27 @@ public:
 		avg_mark = 4;
 	}
 
-	Student(string n, string sname) {
+	Student(string n, string sname, int a, float mark) {
 		cout << "constructor with params" << endl;
 		name = n;
 		surname = sname;
 	}
 
 
+	Student(string n, string sname) {
+		cout << "constructor with params" << endl;
+		name = n;
+		surname = sname;
+	}
+
+	
 
 
 	Student(int a) {
 		cout << "constructor with params" << endl;
 		age = a;
 	}
-
-
-	Student(float mark) {
-		cout << "constructor with params" << endl;
-		avg_mark = mark;
-	}
-
+			
 	Student(float mark) {
 		cout << "constructor with params" << endl;
 		avg_mark = mark;
@@ -49,6 +50,11 @@ public:
 		age = a;
 		avg_mark = mark;
 	}
+
+	~Student() {
+		cout << "Called constructor destructor" << endl;
+	}
+
 
 	void clean_student(Student st) {
 		name = "no name";
@@ -72,17 +78,16 @@ Student get_best_student(Student st1, Student st2, Student st3) {
 }
 
 int main() {
-	Student st1, st2, st3;
+	Student st;
+	Student st1("Ivan", "Ivanov", 14, 10);
+	Student st2("Genr", "asdasd");
+	Student st3(14);
 	
-	st1.init("Ivan", "Ivanov", 14, 10);
-	st2.init("Genrih", "Gurshtinovich", 14, 9);
-	st3.init("Tigran", "Sarkesya", 14, 4);
-
-	//cout << st1.convert_to_string() << endl;
-	//cout << st2.convert_to_string() << endl;
-	//cout << st3.convert_to_string() << endl;
-
-	Student st = get_best_student(st1, st2, st3);
+	cout << st.convert_to_string() << endl;
+	cout << st1.convert_to_string() << endl;
+	cout << st2.convert_to_string() << endl;
+	cout << st3.convert_to_string() << endl;
+	
 	cout << "Best student: " << st.convert_to_string() << endl;
 
 
