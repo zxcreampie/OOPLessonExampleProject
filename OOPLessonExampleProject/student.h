@@ -2,11 +2,56 @@
 #include "main.h"
 
 class Student {
-public:
+private:
 	string name;
 	string surname;
 	int age;
 	float avg_mark;
+
+public:
+
+	const int MIN_AGE = 0;
+	const int MAX_AGE = 160;
+
+	const int MIN_MARK = 0;
+	const int MAX_MARK = 10;
+
+
+	string get_name() {
+		return name;
+	}
+
+	void set_name(string n) {
+		name = n;
+	}
+
+	string get_surname() {
+		return name;
+	}
+
+	void set_surname(string n) {
+		surname = n;
+	}
+
+	int get_age() {
+		return age;
+	}
+
+	void set_age(int a) {
+		if (a > MIN_AGE && a < MAX_AGE) {
+			age = a;
+		}
+	}
+
+	float get_avg_mark() {
+		return avg_mark;
+	}
+
+	void set_avg_mark(float mark) {
+		if (mark >= MIN_MARK && mark <= MAX_MARK) {
+			avg_mark = mark;
+		}
+	}
 
 	// default-constructor (with no-args)
 	Student() {
